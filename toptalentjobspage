@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.eu01.nr-data.net","errorBeacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-659f7528226b1a8f899","applicationID":"29015522","transactionName":"MhBSZQoZWhZYUEVbXwtafWc7V34KW3BeXEQXGlxdHQobLFdXVEo=","queueTime":0,"applicationTime":150,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.eu01.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-659f7528226b1a8f899",applicationID:"29015522"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+    <title>İş İlanları | CV Hazırla, Sertifika Al, İş İlanlarına Başvur!</title>
+
+    <meta name="description" content="En iyi şirketlerin iş ilanları toptalent.co&#39;da! İş aramak i&#231;in CV hazırla, sertifika al, iş başvurusu yap! Hemen yeni bir iş bul, kariyer net!" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="iiRGQhx0EPxsEEn4i-4TWpgzpaIemhoSpRk7U25RMTg" />
+    <meta property="og:url" content="https://toptalent.co/is-ilanlari" />
+    <meta property="og:title" content="İş İlanları | CV Hazırla, Sertifika Al, İş İlanlarına Başvur!" />
+    <meta property="og:site_name" content="toptalent.co" />
+    <meta property="og:description" content="En iyi şirketlerin iş ilanları toptalent.co&#39;da! İş aramak i&#231;in CV hazırla, sertifika al, iş başvurusu yap! Hemen yeni bir iş bul, kariyer net!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="robots" content="index, follow">
+    
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/Content/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Content/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Content/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Content/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/Content/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/Content/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--#region Dns Prefetch & Preconnect  -->
+    <link rel="preconnect" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="//www.google-analytics.com">
+    <link rel="preconnect" href="//connect.facebook.net">
+    <link rel="preconnect" href="//static.hotjar.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="dns-prefetch" href="//static.hotjar.com">
+
+    <!--#endregion -->
+
+    <link href="https://toptalent.co/is-ilanlari" rel="canonical" />
+
+    <meta name="twitter:site" content="@toptalentTR" />
+    <meta name="twitter:title" content="İş İlanları | CV Hazırla, Sertifika Al, İş İlanlarına Başvur!" />
+    <meta name="twitter:description" content="En iyi şirketlerin iş ilanları toptalent.co&#39;da! İş aramak i&#231;in CV hazırla, sertifika al, iş başvurusu yap! Hemen yeni bir iş bul, kariyer net!" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@toptalentTR" />
+
+    <meta name="facebook-domain-verification" content="8djd9p0w2o2gy3f8b5bi5xwnl5k976" />
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/toptalent-core.min.css?v=70">
+    
+    
+    <link rel="stylesheet" href="/assets/css/custom.min.css?v=70">
+    <link href="/assets/css/app.min.css?v=70" rel="stylesheet" />
+    <link href="/owlcarousel?v=MmPx2D6xvHqWXHicx2xQII_16PnBXopYQuZyF8yqpMA1" rel="stylesheet"/>
+
+    <!-- Custom -->
+
+    <link rel="stylesheet" href="/assets/css/all.min.css?v=70" />
+    <link href="/assets/css/nav2.css?v=70" rel="stylesheet" />
+    <link rel="preload" href="/assets/css/nav2.css?v=70" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/nav2.css?v=70"></noscript>
+    
+    
+    
+
+    
+    <link rel="stylesheet" href="/Content/css/bootstrap/bootstrap-multiselect.css?v=70" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/Assets/css/select2-4.1.0-rc.0.min.css" media="print" onload="this.media='all'">
+    
+
+    <link rel="stylesheet" href="/assets/pages/layout/footermobile.css?v=70" media="print" onload="this.media='screen and (max-width:576px)'">
+    <link rel="stylesheet" href="/assets/pages/layout/footer.css?v=70" media="print" onload="this.media='screen and (min-width:1166px)'">
+    
+    
+        <link rel="preload" as="image" href="/assets/img/logo/logo-toptalent.png" importance="high">
+    <link rel="preload" href="/assets/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="/assets/css/custom.min.css?v=70" as="style">
+
+    
+
+    <link rel="preload" as="image" href="/assets/img/cmn/icon-sprite.png" importance="high">
+    <link rel="preload" as="script" href="/assets/js/jquery-1.9.1.min.js">
+
+    <style>
+        .add-button {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+            .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        div.btn-canli-yayin {
+            position: fixed;
+            bottom: 15px;
+            right: 25px;
+            z-index: 100001;
+        }
+        div.btn-display-topawards {
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            z-index: 100001;
+        }
+    </style>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5FS2BNF');</script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+
+
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+    googletag.cmd.push(function () {
+        googletag.defineSlot('/34280856/Toptalent_Ads', [336, 280], 'div-gpt-ad-1528222952994-1').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+<script>
+    window.googletag = window.googletag || { cmd: [] };
+    googletag.cmd.push(function () {
+        googletag.defineSlot('/34280856/300x250', [300, 250], 'div-gpt-ad-1598000872665-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+<script>
+    googletag.cmd.push(function () {
+        var leaderboard_mapping = googletag.sizeMapping().
+            addSize([800, 600], [728, 90]).
+            addSize([0, 0], [320, 50]).
+            build();
+        //leaderboard declaration
+        googletag.defineSlot('/34280856/Toptalent_Ads', [728, 90], 'div-gpt-ad-1528222952994-0').defineSizeMapping(leaderboard_mapping).addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+    <!-- Hotjar Tracking Code for www.toptalent.co -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1019150, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS2BNF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+
+
+
+
+
+
+
+    
+    <input id="cauth" name="cauth" type="hidden" value="True" />
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-right">
+            <div class="modal-content modal-content-right">
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="forgotPassword" tabindex="-1" aria-labelledby="forgotPassword" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-right">
+            <div class="modal-content modal-content-right">
+                <div class="modal-body" id="forgotPasswordModalBody">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="registration" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-right">
+            <div class="modal-content modal-content-right">
+                <div class="modal-body" id="registrationModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="OnBoarding" tabindex="-1" aria-labelledby="onBoarding" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content r-15">
+                <div class="modal-body p-30" id="OnBoardingModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModal" aria-hidden="true" style="z-index:1051!important;">
+        <div class="modal-dialog">
+            <div class="modal-content r-15">
+                <div class="modal-body text-center p-30" id="MessageContent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+
+    
+
+
+<style>
+    @media(max-width:360px) {
+    }
+</style>
+        <div class="container-fluid fixed-top" style="background-color: #fff; box-shadow: 0 1px 0 0 #e3e7eb;">
+
+                    <!-- Header Start -->
+                    <style>
+                        .top-job-button {
+                            background-color: #fff;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+                        }
+
+                        .topTitle {
+                            background: #EFF6FC;
+                            padding-top: 10px;
+                            justify-content: start;
+                        }
+
+                        .top-item {
+                            color: #000;
+                            font-size: 15px;
+                            display: flex;
+                            align-items: center;
+                            padding-bottom: 10px;
+                        }
+
+                            .top-item:hover {
+                                color: #000;
+                                text-decoration: none;
+                            }
+
+                                .top-item:hover:active {
+                                    color: #D51D8A;
+                                    background-color: #EFF6FC;
+                                }
+
+                        .topImage {
+                            margin-right: 8px;
+                        }
+                    </style>
+                <div class="row px-md-4">
+                    <div class="col-7 col-sm-8 navbar-height-l reset-padding-l pr-0 pt-4">
+
+                        <a href="#" class="link-black" style="left:-3px; position:relative;" data-toggle="collapse" data-target="#accordionLefMenu" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation"><i class="fas fa-bars d-sm-none f-16" style="vertical-align:middle;"></i></a>
+                        
+                        <a class="navbar-brand mx-0" href="/">
+                            <img importance="high" width="170" height="34" src="/assets/img/logo/logo-toptalent.png"
+                                 srcset="/assets/img/logo/logo-toptalent@2x.png 2x,
+             /assets/img/logo/logo-toptalent@3x.png 3x"
+                                 class="toptalent-logo pt-0">
+                        </a>
+                        <div class="d-none d-lg-inline d-xl-inline">
+                            <div class="d-none d-lg-inline d-xl-inline dropdown-isara" style="margin-left:10px;">
+                                <span class="un">
+                                    <a href="/is-ilanlari" class="btn ff-pnova-b fw-600  pt-2 pb-2 pl-1 pr-1 dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        İş İlanları
+                                    </a>
+                                </span>
+                                <span class="un">
+                                    <a href="/yetenek-programlari" class="btn ff-pnova-b fw-600  pt-2 pb-2 pl-1 pr-1 dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        Yetenek Programları
+                                    </a>
+                                </span>
+                                <span class="un">
+                                    <a href="/etkinlikler" class="btn ff-pnova-b fw-600  pt-2 pb-2 pl-1 pr-1  dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        Etkinlikler
+                                    </a>
+                                </span>
+                                <span class="un">
+                                    <a href="https://toptalent.co/online-egitim-sertifika-programlari/" class="btn ff-pnova-b fw-600  pt-2 pb-2 pl-1 pr-1 dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        Sertifikalar
+                                    </a>
+                                </span>
+
+                                <span class="un">
+                                    <a href="/yetenek-testleri" class="btn ff-pnova-b fw-600 pt-2 pb-2 pl-1 pr-1 dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        Testler
+                                    </a>
+                                </span>
+                                <span class="un">
+                                    <a href="https://toptalent.co/awards" class="btn ff-pnova-b fw-600 pt-2 pb-2 pl-1 pr-0 dropdown-toggle headItem" type="button"  aria-haspopup="true" aria-expanded="false">
+                                        Awards
+                                    </a>
+                                </span>
+                                <!--<span class="un">
+    <a href="https://toptalent.co/businessschool/online-egitim-sertifika-programlari/" class="btn ff-pnova-b fw-600  p-2 pl-2 pr-2 dropdown-toggle headItem" type="button"-->
+                                
+                                <!--aria-haspopup="true" aria-expanded="false">
+    Eğitimler-->
+                                
+                                <!--</a>
+    </span>-->
+                                
+
+
+                            </div>
+
+                            <!--<div class="d-none d-lg-inline d-xl-inline dropdown-isehazirlan">
+        <a href="#" class="btn  p-2 pl-4 pr-4 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            İşe Hazırlan<i class="fas fa-chevron-down" style=""></i>
+        </a>
+        <div class="dropdown-menu isveren-menu" style="left:-20px!important;">
+            <a class="dropdown-item" href="https://toptalent.co/businessschool/online-egitim-sertifika-programlari/">Business School</a>
+            <a class="dropdown-item" href="https://toptalent.co/businessschool/ucretsiz-online-egitimler/">Ücretsiz Eğitimler</a>
+            <a class="dropdown-item" href="/sirketler">Şirketler</a>
+            <a class="dropdown-item" href="/kariyer-araclari">CV Programları</a>-->
+                            
+                            <!--</div>
+        </div>-->
+
+                        </div>
+
+                        
+                        <style>
+                            .headItem {
+                                color: #000;
+                                text-decoration: none;
+                                border-bottom: 1px solid transparent;
+                                transition: all ease-in-out 100ms;
+                            }
+
+                                .headItem:hover {
+                                    color: #D51D8A;
+                                }
+
+                            /*.un {
+                                    display: inline-block;
+                                }
+
+                                    .un:hover {
+                                        color: #D51D8A;
+                                    }
+
+                                    .un::after {
+                                        content: '';
+                                        width: 0px;
+                                        height: 1px;
+                                        display: block;
+                                        background: #D51D8A;
+                                        transition: 300ms;
+                                    }
+
+                                    .un:hover::after {
+                                        width: 98%;
+                                    }*/
+
+                            .cv-generator {
+                                text-align: center;
+                                display: inline-flex;
+                                height: 35px;
+                                width: 90px;
+                                line-height: 1;
+                                border: 1px solid #8e8e8e;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 5px;
+                                top: -5px;
+                                position: relative;
+                                color: #000;
+                                font-size: 12px;
+                            }
+
+                                .cv-generator a {
+                                    color: #000;
+                                    text-decoration: none;
+                                }
+
+                            @media only screen and (max-width : 667px) {
+                                .cv-generator {
+                                    top: 0;
+                                }
+                            }
+                        </style>
+                        <style>
+                            .isveren-menu {
+                                background: #FFFFFF !important;
+                                box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1) !important;
+                                border-radius: 16px !important;
+                                margin-top: 0px;
+                            }
+
+                                .isveren-menu a.dropdown-item {
+                                    padding-top: 8px;
+                                    padding-bottom: 8px;
+                                }
+
+                            .dropdown-isveren .dropdown-toggle:focus, .dropdown-isara .dropdown-toggle:focus, .dropdown-isehazirlan .dropdown-toggle:focus {
+                                box-shadow: none;
+                            }
+
+                            .dropdown-isara a.dropdown-toggle, .dropdown-isehazirlan a.dropdown-toggle {
+                                font-weight: 600;
+                                font-size: 15px;
+                            }
+
+                                .dropdown-isara a.dropdown-toggle i, .dropdown-isehazirlan a.dropdown-toggle i {
+                                    font-size: 14px;
+                                    right: -10px;
+                                    position: relative;
+                                    top: 0;
+                                }
+
+
+                                .dropdown-isveren a.dropdown-toggle:after, .dropdown-isara a.dropdown-toggle:after, .dropdown-isehazirlan a.dropdown-toggle:after {
+                                    display: none;
+                                }
+                        </style>
+                    </div>
+                    <div class="col-5 col-sm-4 navbar-height-r text-right reset-padding-r" style="padding-left:0px !important;margin-left:0px !important; padding-right:3px !important;margin-right:0px !important;">
+
+                        
+                        
+                        
+                        <a href="/bildirimlerim" class="px-1"><img class="icon-notification" src="/assets/img/cmn/s.gif" width="1" height="1" /><span class="dot sec counter countunreadmessage" style="display:none;"></span></a>
+                        <img src="/Uploads/CandidatePhotos/1731b458-88ee-4fe8-907c-334ac0d7e213.png" width="40" height="40" class="user-photo r-999" />
+
+                        <div class="dropdown d-inline" style="padding-left:0px; margin-left:0px; margin-right:0px; padding-right:0px">
+                            <a class="btn dropdown-user pl-1 pl-sm-2 pr-0 pr-sm-2" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <strong class="d-none d-sm-inline ff-pnova-sb">Ahmet Hasdemir</strong><i class="fas fa-chevron-down fa-xs pl-sm-2"></i>
+                            </a>
+                            <div class="dropdown-menu user-menu" style="left:-20px!important;">
+                                <a class="dropdown-item" href="/ozgecmisim">Özgeçmişim</a>
+                                <a class="dropdown-item" href="/basvurularim">Başvurularım</a>
+                                <a class="dropdown-item" href="https://toptalent.co/businessschool/sertifikalarim/">Sertifikalarım</a>
+                                <a class="dropdown-item" href="/kariyer-planim">Kariyer Planım</a>
+                                <a class="dropdown-item" href="/bildirimlerim">Bildirimlerim</a>
+                                
+                                <a class="dropdown-item" href="/indirim-kuponlarim">Kuponlarım</a>
+                                <a class="dropdown-item" href="/favorilerim">Favorilerim</a>
+                                <a class="dropdown-item" href="/hesabim">Üyelik Ayarlarım</a>
+                                <a class="dropdown-item LogOutBtn" href="javascript:void(0)">Çıkış Yap</a>
+                            </div>
+
+                            <style>
+
+                                img.user-photo {
+                                    -moz-box-shadow: 0 5px 1px #e3e3e3;
+                                    -webkit-box-shadow: 0 5px 1px #e3e3e3;
+                                    box-shadow: 0 0 5px 1px #e3e3e3;
+                                }
+
+                                .user-menu {
+                                    z-index: 105 !important;
+                                    position: fixed !important;
+                                    inset: 0px 0px auto auto !important;
+                                    margin: 0px !important;
+                                    transform: translate(-20px, 65px) !important;
+                                    background: #FFFFFF !important;
+                                    box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1) !important;
+                                    border-radius: 16px !important;
+                                    width: 170px !important;
+                                    margin-top: 35px !important;
+                                }
+
+                                    .user-menu a.dropdown-item {
+                                        padding-top: 8px;
+                                        padding-bottom: 8px;
+                                    }
+
+                                @media only screen and (max-width : 667px) {
+                                    .user-menu {
+                                        z-index: 105 !important;
+                                        position: absolute !important;
+                                        inset: 0px 0px auto auto !important;
+                                        margin: 0px !important;
+                                        background: #FFFFFF !important;
+                                        box-shadow: 0px 4px 17px rgb(0 0 0 / 10%) !important;
+                                        border-radius: 16px !important;
+                                        width: 300px !important;
+                                        left: 0;
+                                        margin: auto;
+                                        top: -30px !important;
+                                    }
+                                }
+                            </style>
+
+                        </div>
+
+                        <span>
+                            <a href="https://toptalent.co/businessschool/sepetim/" class="link-black navbar-seperator fw-600" style="margin-right:0px !important; position:relative;"><img src="/Assets/img/header/basket-sepet.png" height="28"></a>
+                        </span>
+                    </div>
+                </div>
+
+        </div>
+
+    
+    <div class="container-fluid p-0">
+        <div class="row">
+            
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  pl-3 pl-sm-0" id="maincontainer">
+                
+
+<style>
+    .jobs-content {
+        min-height: 600px;
+        padding-bottom: 25px;
+    }
+
+    .job-tags a:hover {
+        text-decoration: none;
+    }
+
+    @media (min-width: 1280px) {
+        .job-list img.comp-logo {
+            width: 100px;
+            height: 75px;
+        }
+    }
+</style>
+
+
+<!-- Job Post Form Start -->
+
+<div class="container-fluid container-blue-lt">
+    <div class="row row-padding">
+        <div class="col-lg-12 pt-4 mt-2 pt-sm-5">
+            <div class="d-none d-sm-block">
+                <ul class='page-breadcrumb'><li><a href="/">Toptalent.co</a><i class='fas fa-chevron-right px-2 fa-xs'></i></li><li><a href="/is-ilanlari">İş İlanları</a></li></ul>
+            </div>
+
+            <h1 class="f-24 pt-3 pt-sm-4"><strong>İş İlanları</strong></h1>
+
+            
+            <div class="job-tags">
+                    <a href="/is-ilanlari">
+                        <input type="button" class="btn selectalltag btn-blue p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" data-type="all" data-action="unselect" value="Tüm İş İlanları" />
+                    </a>
+                                    <a href="/is-ilanlari/yeni-mezun-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" data-type="yeni-mezun" value="Yeni Mezun" />
+                    </a>
+                                    <a href="/is-ilanlari/uzman-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" data-type="profesyonel" value="Uzman" />
+                    </a>
+                                    <a href="/is-ilanlari/staj-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" data-type="staj" value="Staj" />
+                    </a>
+                <a href="/yetenek-programlari">
+                    <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" data-type="ise-alim" value="Yetenek Programları" />
+                </a>
+                    <a href="/is-ilanlari/yazilim-is-ilanlari ">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="Yazılım" />
+                    </a>
+                                    <a href="/is-ilanlari/insan-kaynaklari-is-ilanlari  ">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="İK" />
+                    </a>
+                                    <a href="/is-ilanlari/muhendis-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="Mühendislik" />
+                    </a>
+                                    <a href="/is-ilanlari/istanbul-avrupa-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="İst. Avr." />
+                    </a>
+                                    <a href="/is-ilanlari/istanbul-anadolu-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="İst. Ana." />
+                    </a>
+                                    <a href="/is-ilanlari/ankara-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="Ankara" />
+                    </a>
+                                    <a href="/is-ilanlari/izmir-is-ilanlari">
+                        <input type="button" class="btn tag btn-ghost p-left-15 p-right-15 mr-1 mr-sm-2 m-bottom-10" value="İzmir" />
+                    </a>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row row-padding">
+        <div class="col-lg-12 form-group row w-100 pt-3 ">
+
+            <div class="dropdown d-inline orderby">
+                <a class="btn dropdown-user  pl-3" href="javascript:;" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <strong>Sırala</strong><i class="fas fa-chevron-down fa-xs p-left-10"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item selected" href="#" data-orderby="newests">En yeni</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="col-sm-7"><input type="search" id="txtSearch" placeholder="İş ilanları arasında ara" class="form-control form-control-slim r-999" value="" /></div>
+            <div class="col-sm-auto pt-2">
+                <a href="#" class="link-black pl-1 pl-sm-4 pr-4 select-view" data-view="card"><i class="fas fa-pause pr-1"></i> Kart</a>
+                <a href="#" class="link-pink pr-4 select-view" data-view="list"><i class="fas fa-th-list pr-1"></i> Liste</a>
+                <a href="#" class="link-black" id="btn-jobsfilter" data-toggle="modal" data-target="#jobsFilter"><i class="fas fa-filter pr-1"></i> Filtrele</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Job Post Form -->
+<!-- Jobs List Start -->
+<div class="container-fluid container-blue-lt jobs-content">
+    <div class="row row-padding" id="jobs">
+        <div class="w-100 job-list">
+            
+
+
+    <a href="/mmb-bagimsiz-denetim-ve-danismanlik-denetci-yardimcisi-120636" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/0fa16368-5ddc-4f99-8fe6-5dd6f5eab7d3.png" alt="MMB BAĞIMSIZ DENETİM VE DANIŞMANLIK" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">DENET&#199;İ YARDIMCISI</h5>
+                            <p class="card-text">
+                                MMB BAĞIMSIZ DENETİM VE DANIŞMANLIK
+                                <span class="text-grey-l f-12 pl-3">İstanbul Anadolu</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/mmb-bagimsiz-denetim-ve-danismanlik-denetci-yardimcisi-120636" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 36 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 36 Gün</span>
+                    <button href="mmb-bagimsiz-denetim-ve-danismanlik-denetci-yardimcisi-120636" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/dohler-customer-service-long-term-intern-120629" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/c0dbcb95-3535-4095-9823-df2851a359e5.png" alt="D&#214;HLER" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">Customer Service – Long Term Intern</h5>
+                            <p class="card-text">
+                                D&#214;HLER
+                                <span class="text-grey-l f-12 pl-3">İstanbul Anadolu</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/dohler-customer-service-long-term-intern-120629" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 33 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 33 Gün</span>
+                    <button href="dohler-customer-service-long-term-intern-120629" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/dohler-supply-chain-long-term-intern-120622" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/c0dbcb95-3535-4095-9823-df2851a359e5.png" alt="D&#214;HLER" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">Supply Chain&#160;- Long Term Intern</h5>
+                            <p class="card-text">
+                                D&#214;HLER
+                                <span class="text-grey-l f-12 pl-3">İstanbul Anadolu</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/dohler-supply-chain-long-term-intern-120622" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 32 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 32 Gün</span>
+                    <button href="dohler-supply-chain-long-term-intern-120622" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/toptalent-crm-data-entry-intern-remote-120608" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/3cfc7197-8319-4549-9e60-5765c853df58.png" alt="toptalent.co" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">CRM Data Entry Intern (Remote)</h5>
+                            <p class="card-text">
+                                toptalent.co
+                                <span class="text-grey-l f-12 pl-3">T&#252;m T&#252;rkiye</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/toptalent-crm-data-entry-intern-remote-120608" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-orange'>Son 8 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-orange'>Son 8 Gün</span>
+                    <button href="toptalent-crm-data-entry-intern-remote-120608" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/medical-center-turkey-video-editoru-120594" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/37cafd8f-7695-41b9-96e0-e2df402c28e4.jpg" alt="Medical Center Turkey" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">Video Prod&#252;ksiyon Uzmanı (Freelance)</h5>
+                            <p class="card-text">
+                                Medical Center Turkey
+                                <span class="text-grey-l f-12 pl-3">İstanbul Anadolu</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/medical-center-turkey-video-editoru-120594" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 21 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 21 Gün</span>
+                    <button href="medical-center-turkey-video-editoru-120594" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+        <div class="row">
+            <div class="col-md-12 " style="text-align:center; margin:25px;">
+                <h3 class="f-18">Hazır CV örnekleri ile mükemmel bir CV oluştur, iş ilanlarına başvur!</h3>
+                    <a href="/cv-hazirlama" class="btn btn-pink" style="border-radius: 35px !important;margin-top:7px;">Hemen CV Oluştur</a> 
+            </div>
+        </div>
+    <a href="/dogus-avrasya-bilisim-cagri-merkezi-musteri-temsilcisi-120573" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Assets/img/logo/business.png" alt="DOĞUŞ AVRASYA BİLİŞİM" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">&#199;ağrı Merkezi M&#252;şteri Temsilcisi</h5>
+                            <p class="card-text">
+                                DOĞUŞ AVRASYA BİLİŞİM
+                                <span class="text-grey-l f-12 pl-3">Ankara</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/dogus-avrasya-bilisim-cagri-merkezi-musteri-temsilcisi-120573" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 19 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 19 Gün</span>
+                    <button href="dogus-avrasya-bilisim-cagri-merkezi-musteri-temsilcisi-120573" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/medical-center-turkey-cagri-merkezi-temsilcisi-120566" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/37cafd8f-7695-41b9-96e0-e2df402c28e4.jpg" alt="Medical Center Turkey" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">&#199;ağrı Merkezi Temsilcisi</h5>
+                            <p class="card-text">
+                                Medical Center Turkey
+                                <span class="text-grey-l f-12 pl-3">İstanbul Anadolu</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/medical-center-turkey-cagri-merkezi-temsilcisi-120566" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 17 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 17 Gün</span>
+                    <button href="medical-center-turkey-cagri-merkezi-temsilcisi-120566" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/medical-center-turkey-online-pazarlama-uzmani-120559" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/37cafd8f-7695-41b9-96e0-e2df402c28e4.jpg" alt="Medical Center Turkey" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">Dijital Pazarlama Stajyeri</h5>
+                            <p class="card-text">
+                                Medical Center Turkey
+                                <span class="text-grey-l f-12 pl-3">T&#252;m T&#252;rkiye</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/medical-center-turkey-online-pazarlama-uzmani-120559" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 17 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 17 Gün</span>
+                    <button href="medical-center-turkey-online-pazarlama-uzmani-120559" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/renault-turkiye-4-seasons-proje-stajyerligi-sen-varsan-engel-yok-engelli-birey-120216" class="position">
+        <div class="row no-gutters  card card-noborder flex-row mt-1 p-2 p-sm-4">
+            
+            
+
+            <div class="col-3 col-sm-1 text-center align-self-center">
+                <img src="/Uploads/CompanyImages/Logo/57bbd990-c794-4566-aa72-3225a13642f4.png" alt="Renault Group" class="comp-logo img-fluid ml-2">
+
+            </div>
+            <div class="col-9 col-sm-11">
+                <div class="card-body pr-0">
+                    <div class="row no-gutters">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title f-16 ff-pnova-b">4 Seasons Proje Stajyerliği - Sen Varsan Engel Yok</h5>
+                            <p class="card-text">
+                                Renault Group
+                                <span class="text-grey-l f-12 pl-3">Bursa</span>
+                            </p>
+
+                        </div>
+                        <div style="min-width:300px;display:flex;">
+                            <div class="float-right align-self-center">
+                                <button href="/renault-turkiye-4-seasons-proje-stajyerligi-sen-varsan-engel-yok-engelli-birey-120216" class="btn btn-job-apply d-none d-lg-inline fw-600">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                            </div>
+                            <div class="float-right align-self-center">
+                                <span class='ml-5 mr-5 d-none d-lg-inline p-2 pl-3 pr-3 r-999 badge-circle-green'>Son 14 Gün</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 p-2 d-lg-none">
+                <p class="card-text d-flex justify-content-between align-items-center">
+                    <span class='float-left badge-circle-green'>Son 14 Gün</span>
+                    <button href="renault-turkiye-4-seasons-proje-stajyerligi-sen-varsan-engel-yok-engelli-birey-120216" class="btn btn-job-apply float-right">Başvur <i class="fas fa-chevron-right fa-xs p-left-10"></i></button>
+                    
+                </p>
+            </div>
+        </div>
+    </a>
+
+        </div>
+        <div style="position:relative!important" class="card card-noborder mb-4 w-100 hidden" id="SearchLoader">
+            <svg height="50" width="50" class="generalLoader" style="top:10px;"> <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" class="generalLoader-path"></circle> </svg>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+    <div class="container-fluid" style="background-color: #EFF6FC;">
+        <div class="row-padding">
+            <div class="row no-gutters  card card-noborder flex-row p-2 p-sm-4" style="background-color: #EFF6FC;">
+                
+<div class="p-2">
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">İş İlanları</h2>
+        <span class="f-12">Hayalindeki şirketlerin iş ilanları toptalent.co’da. Güncel iş ilanlarına başvurmak için hemen ücretsiz CV oluştur! Hemen iş ilanlarını incele, kariyer fırsatlarını kaçırma. İş ilanları sitesi Toptalent.co’da her gün yeni bir iş ilanı yayınlandığını biliyor musun? Hemen üye ol, kariyerin için adım at. Kariyer fırsatı burada, hemen başvuru yap. Türkiye’nin İK Platformu toptalent.co’da her yeni gün yayınlanan yeni iş fırsatlarına başvurmak için üye ol. Bazen iş ilanları ingilizce olabiliyor çünkü uluslararası şirketler burada. Çok hızlı başvuru yapılabilir çünkü iş ilanları online.</span>
+    </div>
+        <div class="p-2 pb-0 d-flex">
+            <p class="pr-3 pb-0"><a href="/is-ilanlari" class="">Tüm İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/yeni-mezun-is-ilanlari" class="">Yeni Mezun İş İlanları</a></p>
+            <p class="pb-0 pr-3"><a href="/is-ilanlari/staj-ilanlari" class="">Staj İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/istanbul-avrupa-is-ilanlari" class="">İstanbul Avrupa İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/istanbul-anadolu-is-ilanlari" class="">İstanbul Anadolu İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/ankara-is-ilanlari" class="">Ankara İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/izmir-is-ilanlari" class="">İzmir İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/bursa-is-ilanlari" class="">Bursa İş İlanları</a></p>
+            <p class="pr-3 pb-0"><a href="/is-ilanlari/kocaeli-is-ilanlari" class="">Kocaeli İş İlanları</a></p>
+        </div>
+            <div class="row justify-content-center" style="margin-bottom:15px;">
+            <div style="width: 560px; max-height: 315px;">
+                <lite-youtube  videoid="peP7UdyzrsQ"></lite-youtube>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <span class=" fw-600"></span>
+        </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">İş Başvurusu</h2>
+        <span class="f-12">
+            İş başvurusu yapmak için doğru yerdesin. Türkiye’nin ve dünyanın en iyi şirketlerinin iş ilanları toptalent.co’da. Her yıl 1000’lerce aday burada iş başvurusu yapıyor ve kendine uygun iş buluyor. Sen de ücretsiz üye ol, hemen iş ara ve iş başvurusu yap. İş başvuru formu doldurmak yerine kendine hazırlaman gereken harika bir kariyer net CV. Toptalent.co’da iş var çünkü Toptalent.co Türkiye'nin en yenilikçi istihdam platformu..
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">Kariyer Net Toptalent.co ile Yapılır</h2>
+        <span class="f-12">
+            Hayalindeki şirketlerin iş ilanları Toptalent.co’da. İş hayatına doğru yerden başlamak ya da iş hayatında başarıyı yakalamak istiyorsan doğru kariyer net toptalent.co ile yapılır. Kariyerin için ihtiyacın olan herşey toptalent.co’da var. CV hazırlama programı, iş ilanları, staj ilanları, genç yetenek programları, şirketler, etkinlikler, online eğitim, sertifika programları, ingilize seviye testi, kişilik testi, kariyer tavsiyeleri gibi birçok farklı uygulama ile burada harika bir kariyer yapabilirsin
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">Yenibir İş Mi Arıyorsun?</h2>
+        <span class="f-12">
+            İş ara, iş bul ve kariyer yap! İş arıyorum diyenler; yenibir iş bakanlar için en iyi iş ilanları sitesi toptalent.co! Yeni bir iş arıyorsan hemen ücretsiz CV oluştur, iş başvurusu yapmaya başla. İş arama ve işe alım süreçlerinde yeni nesil teknolojilerle yeni işler toptalent.co’da! Hayalindeki şirketler yeni bir iş için seni bekliyor. İş ilanları için <a href="https://toptalent.co/is-ilanlari">buraya</a>, staj ilanları ve stajyer ilanları için <a href="https://toptalent.co/is-ilanlari/staj-ilanlari">buraya </a>tıkla.
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">Kariyer Sitesi Açıldı</h2>
+        <span class="f-12">
+            En iyi yeteneklerin kariyer platformu toptalent.co senin kariyerine açılan bir site. İş başvurusu ya da staj başvurusu yapmak istiyorsan senin için burası en doğru kariyer sitesi. Ücretsiz CV oluştur ve hemen hayalindeki şirketlerin iş ilanlarına başvurunu yapmaya bu kariyer sitesi ile başla. Kariyer sitesine giriş yaparak iş hayatına adım atabilirsin. Kariyer sitesi giriş sonrası kariyer sitesi başvuru seni bekliyor çünkü işe alım kariyer sitesi ile yapılıyor.
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">Yetenek Sitesi Toptalent.co</h2>
+        <span class="f-12">
+            Yetenek sitesi ile yetenekler kendilerine uygun iş ve staj fırsatlarına başvuru yapabilirler, etkinliklere katılabilirler. En iyi yeteneklerin kariyer platformu toptalent.co, kendini geliştirmek ve kariyerine yön vermek isteyenler için harika bir yetenek sitesi. Toptalent.co sitesinde Türkiye’nin ve dünyanın en şirketlerinin iş ilanlarını, stajyer ilanlarını ve kariyer gelişimine katkı sağlayacak etkinlikleri inceleyip, sana uygun olanlara başvuru yapabilirsin.
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">İş Bulma Siteleri</h2>
+        <span class="f-12">
+            En yenilikçi iş ilanları sitesi toptalent.co’da kendine uygun işler bulabilirsin. İstihdam yapmak isteyen işverenler toptalent.co’da her gün yeni iş ilanları veriyorlar. İş bulma siteleri arasında toptalent.co Türkiye’nin ve dünyanın en iyi şirketlerinin iş ilanlarını, genç yetenek programlarını ve etkinliklerini yayınlayarak öne çıkıyorlar. Sen de hemen ücretsiz üye ol, iş bulma fırsatını kaçırma.
+        </span>
+    </div>
+    <div class="pb-3" style="line-height:1.1;">
+        <h2 class="fw-600 f-15" style="margin-bottom:0 !important;">Yeni Bir İş Ara, İş Bul</h2>
+        <span class="f-12">
+            Yeni bir iş için hazırsan ilk yapman gereken iş bulma siteleri ziyareti. İş bulma siteleri arasında önde gelen toptalent.co ile sen de kolayca iş bul. Sen de toptalent.co’da hemen ücretsiz cv hazırla, yeni bir iş ara, iş başvurunu yap ve Türkiye’nin ve dünyanın en iyi şirketlerinden birinde iş bul. Senin de işin olsun, gel başla.
+        </span>
+    </div>
+</div>
+
+
+<style>
+    .gridforjob{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+    }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "İş ilanı nedir?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bir iş ilanı, şirket içerisinde açık bir pozisyon için bir duyurudur. İş ilanları anlaşılır, olabildiğince kısa, okunması kolay olmalı ve pozisyonla ilgili iş tanımı ve gereksinimler gibi temel bilgileri içermelidir. Potansiyel adaylara, şirketinizin ne iş yaptığı ve şirket kültürü hakkında bir fikir vermelidir."
+    }
+  },{
+    "@type": "Question",
+    "name": "İş başvurusu nasıl yapılır?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "İstediğin işe girebilmenin ilk adımı işe başvuru sürecinde nasıl bir yol izleyeceğini bilmekten geçiyor. İlk olarak özenle hazırlanmış iyi bir CV’ye sahip olmasın. Toptalent CV hazırlama programı ile mükemmel bir CV hazırlayabilirsin. Sonra iş bulma siteleri üzerinden başvuru yapmaya başlayabilirsin. İlgilendiğin pozisyonla ilgili arama yap, iş ilanlarını detaylı incele ve sana uygun olanlara hemen başvur."
+    }
+  },{
+    "@type": "Question",
+    "name": "Nasıl iş bulunur?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Üniversite’den mezun olunur. Mümkünse bir kaç staj yapılır ve ilgili şirket siteleri ve iş bulma siteleri üzerinden iş başvurusunda bulunulur. Görüşme daveti gelir, iş görüşmesi yapılır ve iş teklifi alırsın… Her iş aramış, iş değiştirmiş veya değiştirmeyi düşünmüş kişi bilir ki bu süreç bazen bu kadar basit ve iş bulmak bu kadar kolay olmayabiliyor. İyi işler bulmak için becerilere yatırım yapın, mükemmel bir CV hazırlayın, bulunabilir olun ve iş ağınıza yatırım yapın."
+    }
+  },{
+    "@type": "Question",
+    "name": "Nasıl iş aranır?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yeni bir iş ararken pek çok yönden araştırma yapmalı, bunun için ciddi zaman ayırmalı ve efor sarf etmelisin. İş aramaya kariyer sitelerinin bir listesini yapmak ve bu siteleri günlük olarak kontrol etmekle başlayabilirsin. Bununla birlikte profesyonel sosyal ağlar üzerinden bağlantılar kurmak ve iş aradığını uygun şekilde ilgili kişilere bildirmek iş aramanın en önemli yoludur."
+    }
+  },{
+    "@type": "Question",
+    "name": "Kariyer sitesi nedir? Kariyer sitesi başvuru nasıl yapılır?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En iyi yeteneklerin kariyer platformu toptalent.co senin kariyerine açılan bir site. İş başvurusu ya da staj başvurusu yapmak istiyorsan senin için burası en doğru kariyer sitesi. Kariyer sitesi başvuru nasıl yapılır diye soruyorsan çok kolay: Ücretsiz CV oluştur ve hemen hayalindeki şirketlerin iş ilanlarına başvurunu yapmaya bu kariyer sitesi ile başla."
+    }
+  },{
+    "@type": "Question",
+    "name": "Yetenek sitesi nedir? Yetenek sitesi ne işe yarıyor?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En iyi yeteneklerin kariyer platformu toptalent.co, kendini geliştirmek ve kariyerine yön vermek isteyenler için gerçek bir yetenek sitesidir. Yetenek sitesi ne işe yarıyor diye soruyorsan; yetenek sitesi toptalent.co ile yetenekler ücretsiz CV oluşturup kendilerine uygun iş ve staj fırsatlarına, mt staj programlarına başvuru yapabilirler, etkinliklere katılabilirler."
+    }
+  },{
+    "@type": "Question",
+    "name": "İş bulma siteleri nelerdir?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "İş mi arıyorsun? İş bulma sitelerinin bir listesini yaparak iş bulma konusunda hızlı kazanabilirsin. İş bulma siteleri arasında öne çıkanlar toptalent.co, linkedin ve indeed. Bu siteleri düzenli ziyaret ederek kendine uygun bir iş bulabilirsin."
+    }
+  },{
+    "@type": "Question",
+    "name": "En iyi iş bulma sitesi hangisi?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hiç şüphesiz en iyi iş bulma sitesi toptalent.co en iyi yeteneklerin kariyer platformudur. Türkiye’nin ve dünyanın en iyi şirketleri toptalent.co’da her yıl binlerce iş ilanı veriyorlar ve sonucunda en iyi yetenekleri işe alıyorlar."
+    }
+  },{
+    "@type": "Question",
+    "name": "Hangi siteden iş bulabilirim?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "İş aramaya devam ediyorum, hangi siteden iş bulabilirim diye merak ediyorsan iş bulmak için her gün yayınlanan toptalent iş ilanlarına bakabilirsin."
+    }
+  },{
+    "@type": "Question",
+    "name": "Yeni bir iş bulmak için ne yapmalı?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yeni bir iş bulmak için yapılması gereken ilk önce harika bir CV hazırlamak. Toptalent CV hazırlama programı bu konuda sana yardımcı olabilir. Sonrasında ise iş bulma siteleri ve iş ağın üzerinden başvuru yapmaya başlayabilirsin."
+    }
+  }]
+}
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Toptalent İş ilanları",
+      "description": "Türkiye'nin ve dünyanın en iyi şirketlerinin iş ilanları ve staj ilanları toptalent.co'da! Hemen ücretsiz CV oluştur, hayalindeki şirketlerin iş ilanlarına başvur.",
+      "thumbnailUrl": "https://i9.ytimg.com/vi/peP7UdyzrsQ/mq1.jpg?sqp=CJzdo5UG&rs=AOn4CLBRjHLoSyIAUOS51_LAPUi0rbP90Q",
+      "uploadDate": "2018-06-11",
+      "duration": "PT0M15S",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Toptalent.co",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://toptalent.co/assets/img/logo/logo-toptalent.png",
+          "width": 170,
+          "height": 34
+        }
+      },
+      "contentUrl": "https://www.youtube.com/watch?v=peP7UdyzrsQ",
+      "embedUrl": "https://www.youtube.com/embed/peP7UdyzrsQ",
+      "potentialAction": {
+        "@type": "SeekToAction",
+        "target": "https://toptalent.co/is-ilanlari={seek_to_second_number}",
+        "startOffset-input": "required name=seek_to_second_number"
+      }
+    }
+</script>
+
+
+                
+        <div class="col-12 p-2">
+            <h2 class="f-20 text-black fw-600">Sıkça Sorulan Sorular</h2>
+            <div class="accordion text-black col-12 pl-0" id="accordionExample" style="background-color: #EFF6FC;">
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingOne">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left f-12 px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                İş ilanı nedir? <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            Bir iş ilanı, şirket içerisinde açık bir pozisyon için bir duyurudur. İş ilanları anlaşılır, olabildiğince kısa, okunması kolay olmalı ve pozisyonla ilgili iş tanımı ve gereksinimler gibi temel bilgileri içermelidir. Potansiyel adaylara, şirketinizin ne iş yaptığı ve şirket kültürü hakkında bir fikir vermelidir.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingTwo">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left f-12 px-0" style="padding:0 !important;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                İş başvurusu nasıl yapılır?  <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            İstediğin işe girebilmenin ilk adımı işe başvuru sürecinde nasıl bir yol izleyeceğini bilmekten geçiyor. İlk olarak özenle hazırlanmış iyi bir CV’ye sahip olmasın. Toptalent CV hazırlama programı ile mükemmel bir CV hazırlayabilirsin. Sonra iş bulma siteleri üzerinden başvuru yapmaya başlayabilirsin. İlgilendiğin pozisyonla ilgili arama yap, iş ilanlarını detaylı incele ve sana uygun olanlara hemen başvur.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingThree">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12 px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Nasıl iş bulunur? <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            Üniversite’den mezun olunur. Mümkünse bir kaç staj yapılır ve ilgili şirket siteleri ve iş bulma siteleri üzerinden iş başvurusunda bulunulur. Görüşme daveti gelir, iş görüşmesi yapılır ve iş teklifi alırsın… Her iş aramış, iş değiştirmiş veya değiştirmeyi düşünmüş kişi bilir ki bu süreç bazen bu kadar basit ve iş bulmak bu kadar kolay olmayabiliyor. İyi işler bulmak için becerilere yatırım yapın, mükemmel bir CV hazırlayın, bulunabilir olun ve iş ağınıza yatırım yapın.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingFour">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Nasıl iş aranır? <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            Yeni bir iş ararken pek çok yönden araştırma yapmalı, bunun için ciddi zaman ayırmalı ve efor sarf etmelisin. İş aramaya kariyer sitelerinin bir listesini yapmak ve bu siteleri günlük olarak kontrol etmekle başlayabilirsin. Bununla birlikte profesyonel sosyal ağlar üzerinden bağlantılar kurmak ve iş aradığını uygun şekilde ilgili kişilere bildirmek iş aramanın en önemli yoludur.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingFive">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Kariyer sitesi nedir? Kariyer sitesi başvuru nasıl yapılır?  <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            En iyi yeteneklerin kariyer platformu toptalent.co senin kariyerine açılan bir site. İş başvurusu ya da staj başvurusu yapmak istiyorsan senin için burası en doğru kariyer sitesi. Kariyer sitesi başvuru nasıl yapılır diye soruyorsan çok kolay: Ücretsiz CV oluştur ve hemen hayalindeki şirketlerin iş ilanlarına başvurunu yapmaya bu kariyer sitesi ile başla.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingSix">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Yetenek sitesi nedir? Yetenek sitesi ne işe yarıyor?  <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            En iyi yeteneklerin kariyer platformu toptalent.co, kendini geliştirmek ve kariyerine yön vermek isteyenler için gerçek bir yetenek sitesidir. Yetenek sitesi ne işe yarıyor diye soruyorsan; yetenek sitesi toptalent.co ile yetenekler ücretsiz CV oluşturup kendilerine uygun iş ve staj fırsatlarına, mt staj programlarına başvuru yapabilirler, etkinliklere katılabilirler.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingSeven">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                İş bulma siteleri nelerdir? <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            İş mi arıyorsun? İş bulma sitelerinin bir listesini yaparak iş bulma konusunda hızlı kazanabilirsin. İş bulma siteleri arasında öne çıkanlar toptalent.co, linkedin ve indeed. Bu siteleri düzenli ziyaret ederek kendine uygun bir iş bulabilirsin.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingEight">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                En iyi iş bulma sitesi hangisi? <i class="fas fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            Hiç şüphesiz en iyi iş bulma sitesi toptalent.co en iyi yeteneklerin kariyer platformudur. Türkiye’nin ve dünyanın en iyi şirketleri toptalent.co’da her yıl binlerce iş ilanı veriyorlar ve sonucunda en iyi yetenekleri işe alıyorlar.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color: #EFF6FC !important; border-bottom: none;" id="headingNine">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                Hangi siteden iş bulabilirim?  <i class="fa fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            İş aramaya devam ediyorum, hangi siteden iş bulabilirim diye merak ediyorsan iş bulmak için her gün yayınlanan toptalent iş ilanlarına bakabilirsin.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-noborder">
+                    <div class="card-header p-0" style="background-color:#EFF6FC !important; border-bottom:none;" id="headingTen">
+                        <h3 class="mb-0">
+                            <button class="btn btn-block text-left  f-12  px-0" type="button" style="padding:0 !important;" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                Yeni bir iş bulmak için ne yapmalı?  <i class="fa fa-plus float-right pt-1"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample" style="background-color: #EFF6FC !important;">
+                        <div class="card-body f-12">
+                            Yeni bir iş bulmak için yapılması gereken ilk önce harika bir CV hazırlamak. Toptalent CV hazırlama programı bu konuda sana yardımcı olabilir. Sonrasında ise iş bulma siteleri ve iş ağın üzerinden başvuru yapmaya başlayabilirsin.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- End Jobs List -->
+<!-- Jobs Filer Modal Start -->
+<div class="modal fade firstopen" id="jobsFilter" tabindex="-1" aria-labelledby="jobsFilter" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-right modal-dialog-height">
+        <div class="modal-content modal-content-right modal-dialog-height p-0">
+
+        </div>
+    </div>
+</div>
+<!-- End Jobs Filer Modal -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+<style>
+    p {
+        padding-bottom: 0px !important;
+    }
+</style>
+
+    <footer>
+        <div class="container-fluid container-grey">
+            <div class="row row-padding">
+                <div class="pb-5 col-sm-12"></div>
+                <div class="col-sm-2 text-center text-sm-left" style="color:#fff;">
+                    <a href="/"><img src="/assets/img/logo/logo-toptalent.png" title="toptalent.co" alt="toptalent.co"></a><br /><br />
+                    <a href="https://www.facebook.com/ToptalentTR" target="_blank" class="link-white"><i class="fab fa-facebook p-right-10"></i></a>
+                    <a href="https://www.instagram.com/toptalent.co" target="_blank" class="link-white"><i class="fab fa-instagram-square p-right-10"></i></a>
+                    <a href="https://www.linkedin.com/company/toptalenttr" target="_blank" class="link-white"><i class="fab fa-linkedin"></i></a><br /><br />
+                    <a href="#" class="p-right-5"><i class="fab fa-cc-visa fa-2x" style=""></i></a>
+                    <a href="#" class="link-white"><i class="fab fa-cc-mastercard fa-2x" style=""></i></a>
+                </div>
+                    <div class="col-sm-10  d-none d-sm-flex" style="color:#fff;">
+                        <div class="col-sm-2">
+                            <h5>Toptalent</h5>
+                            <p class=""><a href="/hakkimizda" class="">Hakkımızda</a></p>
+                            <p class=""><a href="/footer/lightingtext" class="">Yetenek Aydınlatma Metni</a></p>
+                            <p class=""><a href="#" class="">İşveren Aydınlatma Metni</a></p>
+                            <p class=""><a href="/footer/termsofuse" class="">Şartlar ve Koşullar</a></p>
+                            <p class=""><a href="/footer/privacypolicy" class="">Gizlilik Politikası</a></p>
+                            <p class=""><a href="/footer/protectionofpersonaldatalaw" class="">KVKK Politikası</a></p>
+                            <p class=""><a href="/cerez-politikasi" class="">Çerez Politikası</a></p>
+                            <p class=""><a href="/iletisim" class="">İletişim</a></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>Yetenek</h5>
+                            <p class=""><a href="/is-ilanlari" class="">İş İlanları</a></p>
+                            <p class=""><a href="/yetenek-programlari" class="">Yetenek Programları</a></p>
+                            <p class=""><a href="/etkinlikler" class="">Etkinlikler</a></p>
+                            <p class=""><a href="/online-egitim-sertifika-programlari" class="">Sertifika Programları</a></p>
+                            <p class=""><a href="https://toptalent.co/businessschool/program/kisisel-gelisim-programi/" class="">Kişisel Gelişim Programı</a></p>
+                            <p class=""><a href="/sirketler" class="">Şirketler</a></p>
+                            <p class=""><a href="/cv-hazirlama" class="">Ücretsiz CV Hazırlama Programı</a></p>
+                            <p class=""><a href="/cv-hazirlama" class="">CV Örnekleri</a></p>
+                            <p class=""><a href="/en-onemli-is-gorusmesi-sorulari-ve-cevaplari" class="">Mülakat Soruları ve Cevapları</a></p>
+                            <p class=""><a href="/kariyer-tavsiyeleri" class="">Kariyer Tavsiyeleri</a></p>
+                            <p class=""><a href="/turkiyedeki-universiteler-listesi" class="">Türkiye'deki Üniversiteler</a></p>
+
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>İş İlanları</h5>
+                            <p class=""><a href="/is-ilanlari" class="">Tüm İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/yeni-mezun-is-ilanlari" class="">Yeni Mezun İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/staj-ilanlari" class="">Staj İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/istanbul-avrupa-is-ilanlari" class="">İstanbul Avrupa Yakası İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/istanbul-anadolu-is-ilanlari" class="">İstanbul Anadolu Yakası İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/ankara-is-ilanlari" class="">Ankara İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/izmir-is-ilanlari" class="">İzmir İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/bursa-is-ilanlari" class="">Bursa İş İlanları</a></p>
+                            <p class=""><a href="/is-ilanlari/kocaeli-is-ilanlari" class="">Kocaeli İş İlanları</a></p>
+                            <p class=""><a href="/yetenek-programlari" class="">Yetenek Programları</a></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>Sertifika Programları</h5>
+                            <p class=""><a href="/online-egitim-sertifika-programlari" class="">Tüm Sertifika Programları</a></p>
+                            <p class=""><a href="/is-hayati-egitimleri" class="">İş Hayatı Eğitimleri</a></p>
+                            <p class=""><a href="/dijital-pazarlama-egitimleri" class="">Dijital Pazarlama Eğitimleri</a></p>
+                            <p class=""><a href="/finans-egitimleri" class="">Finans Eğitimleri</a></p>
+                            <p class=""><a href="/girisimcilik-ve-eticaret-egitimleri" class="">Girişimcilik ve E-ticaret Eğitimleri</a></p>
+                            <p class=""><a href="/ingilizce-ogrenme-ingilizce-kurslari" class="">İngilizce Eğitimleri</a></p>
+                            <p class=""><a href="/insan-kaynaklari-egitimleri" class="">İnsan Kaynakları Eğitimleri</a></p>
+                            <p class=""><a href="/kisisel-gelisim-kitaplari" class="">Kişisel Gelişim Eğitimleri</a></p>
+                            <p class=""><a href="/excel-egitimleri" class="">MS Office Excel Eğitimleri</a></p>
+                            <p class=""><a href="/muhendislik-egitimleri" class="">Mühendislik Eğitimleri</a></p>
+                            <p class=""><a href="/online-staj-programlari" class="">Online Staj Programları</a></p>
+                            <p class=""><a href="https://toptalent.co/satis-ve-pazarlama-egitimleri" class="">Satış ve Pazarlama Eğitimleri</a></p>
+                            <p class=""><a href="/teknoloji-ve-yazilim-egitimleri" class="">Teknoloji ve Yazılım Eğitimleri</a></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>Yetenek Testleri</h5>
+                            <p class=""><a href="/online-egitim-sertifika-programlari" class="">Tüm Yetenek Testleri</a></p>
+                            <p class=""><a href="/ingilizce-seviye-testi" class="">İngilizce Seviye Testi</a></p>
+                            <p class=""><a href="/genel-yetenek-testi" class="">Genel Yetenek Testi</a></p>
+                            <p class=""><a href="/kisilik-testi" class="">Kişilik Testi</a></p>
+                            <p class=""><a href="/excel-testi" class="">Excel Seviye Testi</a></p>
+                            <p class=""><a href="/microsoft-office-testi" class="">MS Office Seviye Testi</a></p>
+                            <p class=""><a href="/almanca-seviye-testi" class="">Almanca Seviye Testi</a></p>
+                            <p class=""><a href="/dijital-pazarlama" class="">Dijital Pazarlama Testi</a></p>
+                            <p class=""><a href="/iq-testi" class="">IQ Testi</a></p>
+                            <p class=""><a href="/meslek-testi" class="">Meslek Testi</a></p>
+                            <p class=""><a href="/enneagram-testi" class="">Enneagram Testi</a></p>
+                            <p class=""><a href="/kisisel-gelisim-plani" class="">Kişisel Gelişim Planı</a></p>
+                            <p class=""><a href="/mulakat-sorulari-ve-cevaplari-simulasyonu" class="">Mülakat Simülasyonu</a></p>
+
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>İşveren</h5>
+                            <p class=""><a href="/sirket" class="">İşveren Girişi</a></p>
+                            <p class=""><a href="/ise-alim-cozumlerimiz" class="">İşe Alım Çözümlerimiz</a></p>
+                            <p class=""><a href="/ucretsiz-is-ilani-ver" class="">Ücretsiz İş İlanı Verin</a></p>
+                            <p class=""><a href="/assessment-aday-degerlendirme-ve-ise-alim-testleri" class="">Değerlendirme ve İşe Alım Testleri</a></p>
+                            <p class=""><a href="/insan-kaynaklari-platformu" class="">İnsan Kaynakları Platformu</a></p>
+                            <p class=""><a href="/isveren-markasi" class="">İşveren Markası</a></p>
+                            <p class=""><a href="/insan-kaynaklari-trend-raporlari" class="">İK Trend Raporları</a></p>
+                            <p class=""><a href="/top100talentprogram" class="">TOP100 Talent Program</a></p>
+                            <p class=""><a href="/ucretsiz-is-ilani-ver" class="">Fiyatlandırma</a></p>
+                            <p class=""><a href="/iletisim" class="">Bize Ulaşın</a></p>
+
+                            
+
+                        </div>
+                    </div>
+
+                <div class="p-bottom-30 col-sm-12"></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row row-padding row-f-bottom">
+                <div class="col-sm-12 col-lg-6 text-center text-lg-left footer-note reset-padding-l">
+                    <div class="float-lg-left float-sm-none  float-md-none" style="padding-bottom:16px;"><img src="/assets/img/cmn/s.gif" class="icon-isk" width="1" height="1" /></div>
+                        <p style=" font-size: 8px; line-height:15px;">
+                            Toptalent Marka ve İnsan Kaynakları Danışmanlığı Limited Şirketi Özel İstihdam Bürosu Olarak 21 / 06 / 2021 - 20 / 06 / 2024 tarihleri arasında faaliyette bulunmak üzere, Türkiye İş Kurumu tarafından 14.06.2021 tarih ve 8819745 sayılı karar uyarınca 1251 nolu belge ile faaliyet göstermektedir.Toptalent İş İlanları için tıklayın. 4904 sayılı kanun uyarınca iş arayanlardan ücret alınmayacak ve menfaat temin edilmeyecektir.<br />Türkiye İş Kurumu İstanbul İl Müdürlüğü: 0 212 249 29 87 | Türkiye iş Kurumu İstanbul Çalışma ve İş Kurumu Bahçelievler Hizmet Merkezi : 0 212 503 45 50
+                        </p>
+                </div>
+                <div class="col-sm-12 col-lg-6 text-center text-lg-right footer-note reset-padding-r">
+                    <br />Toptalent 2022 &copy; Tüm Hakları Saklıdır.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/assets/js/jquery-1.9.1.min.js"></script>
+    
+    <script src="/Assets/js/jquery.lazy-1.7.10.min.js"></script>
+
+    
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/js/custom.min.js?v=70"></script>
+    <script src="/Scripts/url.helper.js"></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    
+    
+    <script src="/Content/js/multiselect?v=MzwY60DZcR5a_A-LYsU6bzXDFOir7BKx9j6sUiu9MD81"></script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="/Assets/js/polyfill-0.1.43.min.js"></script>
+
+    
+    
+    <script src="/Assets/js/select2-4.0.0-rc.0.min.js"></script>
+    <script src="/Assets/js/jquery.inputmask.bundle-3.1.62.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"></script>
+    
+    <script type="application/ld+json">
+           {"@context":"https://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"toptalent.co","item":"https://toptalent.co"},{"@type":"ListItem","position":2,"name":"İş İlanları","item":"https://toptalent.co/is-ilanlari"}]}
+    </script>
+    <script>
+        var _citySeoName = null;
+        var _departmentSeoName = null;
+        var _positionLevelIds = [];
+        var loaderHtml = '<div style="position:relative!important" class="card card-noborder mb-4 w-100 hidden" id="SearchLoader"> <svg height="50" width="50" class="generalLoader" style="top:10px;"> <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" class="generalLoader-path"></circle> </svg> </div>';
+        var $loader = $("#SearchLoader");
+        var $jobs = $("#jobs");
+        var view = "card";
+        var isCardView = false;
+        var orderBy = "newests";
+        var isLoading = false, pageNumber = 2, pageSize = 9;
+        var txtSearch = "";
+        var positionLevelIds = [], cityIds = [], departmentIds = [];
+        var filterTags = [];
+        if (_positionLevelIds) {
+
+            _positionLevelIds.forEach(function (id) {
+                positionLevelIds.push(id);
+
+            });
+        }
+        console.log(positionLevelIds)
+
+        //$('#leftmenu .leftmenu-nav a').on('click', function () {
+        //    $('#leftmenu .leftmenu-nav').find('li.active').removeClass('active');
+        //    $(this).parent('li').addClass('active');
+        //});
+
+        var searchboxID = "#txtSearch";
+        $(function () {
+            txtSearch = $(searchboxID).val();
+        });
+
+        $('#btn-jobsfilter').click(function (e) {
+
+            var $thismodal = $('#jobsFilter');
+            if ($thismodal.hasClass('firstopen')) {
+                $.ajax({
+                    url: '/Job/JobsFilter',
+                    type: 'GET',
+                    dataType: 'html',
+                    success: function (content) {
+                        $thismodal.find('div.modal-content').html(content);
+                        $thismodal.removeClass('firstopen')
+                    }
+                });
+            }
+            else {
+                $thismodal.modal('show');
+            }
+
+
+
+        });
+        $(searchboxID).keyup(function (event) {
+            if (event.keyCode != 13 && event.keyCode != 37 && event.keyCode != 39) {
+                if ($.trim($(searchboxID).val()).length > 2) {
+                    txtSearch = $(searchboxID).val();
+                    delay(function () {
+                        var options = {};
+                        options.url = '/Job/SearchJob',
+                            options.type = "POST",
+                            options.contentType = "application/json; charset=utf-8",
+                            options.data = JSON.stringify({ PageSize: pageSize, PageNumber: 1, IsCardView: isCardView, SearchKey: txtSearch, DepartmentIds: departmentIds, CityIds: cityIds, PositionLevelIds: positionLevelIds, OrderBy: orderBy, FilterTags: GetTags(), DepartmentSeo: _departmentSeoName, CitySeo: _citySeoName}),
+                            options.success = function (result) {
+
+                                isLoading = false;
+
+                                LoadJobsHtml(result)
+
+                            };
+                        options.error = function (err) {
+                            console.log(err.statusText);
+                        };
+                        $.ajax(options);
+                    }, 500);
+                }
+                else if ($.trim($(searchboxID).val()).length == 0) {
+                    txtSearch = "";
+                    LoadDefaultJobs();
+                }
+                else {
+                    //ClearJobsContent();
+                }
+            }
+            else {
+                txtSearch = "";
+                ClearJobsContent();
+            }
+        });
+
+        var delay = (function () {
+            var timer = 0;
+            return function (callback, ms) {
+                clearTimeout(timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+
+        function GetTags() {
+            var array = [];
+            $('.tag').each(function () {
+                var current = $(this);
+                if (current.hasClass("btn-blue")) {
+                    array.push($(this).data("type"));
+                }
+
+            });
+            if ($(".selectalltag").hasClass("btn-blue")) {
+                array.push($(".selectalltag").data("type"));
+            }
+            return array;
+        }
+        //$(".tag").click(function () {
+        //    var ord = $(this).val()
+        //    if ($(this).hasClass("btn-blue")) {
+        //        $(this).removeClass("btn-blue").addClass("btn-ghost");
+        //    }
+        //    else {
+        //        $(this).removeClass("btn-ghost").addClass("btn-blue");
+        //    }
+        //    $(".selectalltag").removeClass("btn-blue").addClass("btn-ghost").data("action", "select");
+
+        //    LoadDefaultJobs();
+        //})
+        //$(".selectalltag").click(function () {
+        //    if ($(this).data("action") == "unselect") {
+        //        $('.tag').each(function () {
+        //            var current = $(this);
+        //            current.removeClass("btn-blue").addClass("btn-ghost");
+        //        });
+        //        $(this).removeClass("btn-blue").addClass("btn-ghost");
+        //        $(this).data("action", "select");
+        //    }
+        //    else {
+        //        $('.tag').each(function () {
+        //            var current = $(this);
+        //            current.removeClass("btn-blue").addClass("btn-ghost");
+        //        });
+        //        $(this).removeClass("btn-ghost").addClass("btn-blue");
+        //        $(this).data("action", "unselect");
+        //    }
+        //    LoadDefaultJobs();
+        //})
+
+        $(".orderby ul.dropdown-menu li a").click(function () {
+            var ord = $(this).data("orderby");
+            orderBy = ord;
+            LoadDefaultJobs();
+        })
+
+        $(".select-view").click(function () {
+            var view = $(this).data("view");
+            //console.log(view)
+
+            $(".select-view").each(function (i, item) {
+                $(item).removeClass("link-pink").addClass("link-black");
+            })
+            $(this).addClass("link-pink").removeClass("link-black");
+            isCardView = view == "card";
+            LoadDefaultJobs();
+        })
+        function LoadDefaultJobs() {
+            pageNumber = 2;
+            $.ajax({
+                url: '/Job/SearchJob',
+                type: 'POST',
+                contentType: "application/json",
+                data: JSON.stringify({ PageSize: pageSize, PageNumber: 1, IsCardView: isCardView, SearchKey: txtSearch, DepartmentIds: departmentIds, CityIds: cityIds, PositionLevelIds: positionLevelIds, OrderBy: orderBy, FilterTags: GetTags(), DepartmentSeo: _departmentSeoName, CitySeo: _citySeoName }),
+                success: function (html) {
+                    LoadJobsHtml(html)
+                }
+            });
+        }
+        function ClearJobsContent() {
+            if (isCardView) {
+                $jobs.empty();
+            }
+            else {
+                $jobs.find('.job-list').empty();
+            }
+        }
+        function LoadJobsHtml(html) {
+
+            $jobs.empty();
+            isLoading = false;
+            if (isCardView) {
+                $jobs.parent().removeClass('container-blue-lt');
+                if (html.length > 10) {
+                    $jobs.append(html);
+                    //$jobs.append(loaderHtml);
+                }
+            }
+            else {
+                $jobs.parent().addClass('container-blue-lt');
+                if (html.length > 10) {
+                    var newList = $("<div class='w-100 job-list'></div>");
+                    newList.append(html);
+                    $jobs.append(newList);
+                    $jobs.append(loaderHtml);
+                }
+            }
+            $('.lazy-load').lazy({
+                effect: "fadeIn",
+                effectTime: 500,
+                threshold: 300
+            });
+        }
+
+        window.addEventListener('scroll', e => {
+            $loader = $("#SearchLoader");
+            if (GetScrollTop() < GetDocumentHeight() - 2500 - window.innerHeight) {
+                return;
+            }
+            else {
+                if (!isLoading) {
+                    console.log(isLoading)
+
+                    isLoading = true;
+
+                    $loader.removeClass("hidden");
+                    $.ajax({
+                        url: '/Job/SearchJob',
+                        type: 'POST',
+                        contentType: "application/json",
+                        data: JSON.stringify({ pageSize: pageSize, pageNumber: pageNumber, isCardView: isCardView, SearchKey: txtSearch, DepartmentIds: departmentIds, CityIds: cityIds, PositionLevelIds: positionLevelIds, OrderBy: orderBy, FilterTags: GetTags(), DepartmentSeo: _departmentSeoName, CitySeo: _citySeoName }),
+                        success: function (html) {
+
+                            if (html.length > 10) {
+                                if (isCardView) {
+                                    $("#jobs").append(html);
+                                }
+                                else {
+                                    $("#jobs .job-list").append(html);
+                                }
+                                pageNumber++;
+
+                                isLoading = false;
+
+                            }
+                            //$loader.attr("class", "hidden");
+                            $('.lazy-load').lazy({
+                                effect: "fadeIn",
+                                effectTime: 500,
+                                threshold: 300
+                            });
+                            $loader.addClass("hidden");
+                        }
+                    });
+
+                }
+            }
+
+
+        })
+        //window.onscroll = function () {
+        //    //console.log(GetScrollTop() + "||" + (GetDocumentHeight() - window.innerHeight))
+
+
+        //    if (GetScrollTop() < GetDocumentHeight() - 35 - window.innerHeight) {
+        //        return;
+        //    }
+        //    if (!isLoading) {
+        //        isLoading = true;
+        //        $loader.removeClass("hidden");
+        //        //$loader.removeAttr("class", "hidden");
+        //        $.ajax({
+        //            url: '/Job/SearchJob',
+        //            type: 'POST',
+        //            contentType: "application/json",
+        //            data: JSON.stringify({ pageSize: pageSize, pageNumber: pageNumber, isCardView: isCardView, SearchKey: txtSearch}),
+        //            success: function (html) {
+
+        //                if (html.length > 0) {
+        //                    if (isCardView) {
+        //                        $("#jobs").append(html);
+        //                    }
+        //                    else {
+        //                        $("#jobs .job-list").append(html);
+        //                    }
+        //                    pageNumber++;
+        //                    isLoading = false;
+
+        //                }
+        //                //$loader.attr("class", "hidden");
+
+        //                $loader.addClass("hidden");
+        //            }
+        //        });
+        //    }
+        //}
+        //window.onscroll = function () {
+        //    if (window.scrollY > (document.body.offsetHeight - window.outerHeight)) {
+        //        console.log("It's working!");
+        //    }
+        //}
+        function GetScrollTop() {
+            return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        }
+        function GetDocumentHeight() {
+            const body = document.body;
+            const html = document.documentElement;
+
+            return Math.max(
+                body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight
+            );
+        }
+    </script>
+
+
+    <script src="/Scripts/jquery.ui.touch-punch.min.js"></script>
+        <script src="/Assets/js/onboarding.min.js?v=70"></script>
+    <script>
+        function loadTurnstileLoginScript() {
+            if (!document.querySelector('script[src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileloginCb"]')) {
+                var script = document.createElement('script');
+                script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileloginCb";
+                script.defer = true;
+                document.head.appendChild(script);
+            }
+        }
+
+     function CountUnreadMessage() {
+        $.get("/layout/countunreadmessage", function (data) {
+            var $countdiv = $(".countunreadmessage");
+            if (data > 0) {
+                $countdiv.css("display", "inline-block");
+            }
+            else {
+                $countdiv.css("display", "none");
+
+            }
+            $countdiv.html(data);
+            });
+        }
+        $(document).ready(function () {
+
+            $('.dropdown-isveren,.dropdown-isara,.dropdown-isehazirlan').hover(function () {
+                $('.dropdown-toggle', this).trigger('click');
+            });
+            $('.lazy-load').lazy({
+                effect: "fadeIn",
+                effectTime: 300,
+                threshold: 350 });
+
+            $('div.modal').on('show.bs.modal', function () {
+                var modal = this;
+                var hash = modal.id;
+                window.location.hash = hash;
+                window.onhashchange = function () {
+                    if (!location.hash) {
+                        $(modal).modal('hide');
+                    }
+                }
+                setTimeout(function () {
+                    $("body").addClass("modal-open");
+                })
+            });
+            $('div.modal').on('shown.bs.modal', function () {
+                $("body").addClass("modal-open");
+            });
+            $('div.modal').on('hide.bs.modal', function () {
+                var hash = this.id;
+                history.replaceState('', document.title, window.location.pathname);
+            });
+              $.get("/layout/login", function (data) {
+                $("#loginModal .modal-body").empty().append(data);
+            });
+            $("#loginModal").on('shown.bs.modal', function () {
+                isShowLoginModal = true;
+                loadTurnstileLoginScript();
+            });
+            $("#loginModal").on('hide.bs.modal', function () {
+                isShowLoginModal = false;
+            });
+            $("#registration").on('shown.bs.modal', function () {
+                isShowRegisterModal = true;
+            });
+            $("#registration").on('hide.bs.modal', function () {
+                isShowRegisterModal = false;
+            });
+            $("#forgotPassword").on('shown.bs.modal', function () {
+                isShowForgotPasswordModal = true;
+            });
+            $("#forgotPassword").on('hide.bs.modal', function () {
+                isShowForgotPasswordModal = false;
+            });
+
+            locationHashChanged();
+                 CountUnreadMessage();
+
+            // when close button clicked simulate back
+            //$('div.modal button.close').on('click', function () {
+            //    window.history.back();
+            //})
+            //// when esc pressed when modal open simulate back
+            //$('div.modal').keyup(function (e) {
+            //    if (e.keyCode == 27) {
+            //        window.history.back();
+            //    }
+            //});
+        });
+
+        $(document).on('click', '.RegisterationBtn', function () {
+            $('.modal.show').modal('hide');
+            if ($("#cauth").val() == 'False') {
+                  $.get("/layout/singin", function (data) {
+                      $("#registrationModalBody").empty().append(data);
+                      $('#registration').modal('show');
+                 });
+            }
+
+        })
+        $(document).on('click', '.LoginBtn', function () {
+            $('.modal.show').modal('hide');
+            if ($("#cauth").val() == 'False') {
+                    $('#loginModal').modal('show');
+            }
+
+        })
+        $(document).on('click', '.ForgotPasswordBtn', function () {
+            $('.modal.show').modal('hide');
+            $.get("/layout/forgotpassword", function (data) {
+                $("#forgotPasswordModalBody").empty().append(data);
+                $('#resetEmail').val("");
+                $('#forgotPassword').modal('show');
+            });
+        })
+        $(document).on('click', '.LinkedinLogin', function () {
+            var registiretionModal = document.getElementById("registration")
+            if (registiretionModal != null) {
+                var registiretionClassList = registiretionModal.classList;
+                if (registiretionClassList.contains("show")) {
+                    var serviceContract = ($("#check1").prop("checked") ? true : false);
+                    if (!serviceContract) {
+                        $('.registrer-sign-up-message').html('Hizmet Sözleşmesini onaylamanız gerekmektedir.');
+                        return false;
+                    }
+                    var explicitConsentText = ($("#check3").prop("checked") ? true : false);
+                    if (!explicitConsentText) {
+                        $('.registrer-sign-up-message').html('Açık Rıza Metnini kabul etmeniz gerekmektedir.');
+                        return false;
+                    }
+                }
+            }
+            var redirectUrl ="/account/signin?type=Linkedin";
+            location.href = redirectUrl + "&ReturnUrl=" + location.pathname;
+        })
+        $(document).on('click', '.FacebookLogin', function () {
+            var registiretionModal = document.getElementById("registration")
+            if (registiretionModal != null) {
+                var registiretionClassList = registiretionModal.classList;
+                if (registiretionClassList.contains("show")) {
+                    var serviceContract = ($("#check1").prop("checked") ? true : false);
+                    if (!serviceContract) {
+                        $('.registrer-sign-up-message').html('Hizmet Sözleşmesini onaylamanız gerekmektedir.');
+                        return false;
+                    }
+                    var explicitConsentText = ($("#check3").prop("checked") ? true : false);
+                    if (!explicitConsentText) {
+                        $('.registrer-sign-up-message').html('Açık Rıza Metnini kabul etmeniz gerekmektedir.');
+                        return false;
+                    }
+                }
+            }
+            var redirectUrl = "/account/signin?type=Facebook";
+            location.href = redirectUrl + "&ReturnUrl=" + location.pathname;
+        })
+        $(document).on('click', '.GoogleLogin', function () {
+            var registiretionModal = document.getElementById("registration")
+            if (registiretionModal != null) {
+                var registiretionClassList = registiretionModal.classList;
+                if (registiretionClassList.contains("show")) {
+                    var serviceContract = ($("#check1").prop("checked") ? true : false);
+                    if (!serviceContract) {
+                        $('.registrer-sign-up-message').html('Hizmet Sözleşmesini onaylamanız gerekmektedir.');
+                        return false;
+                    }
+                    var explicitConsentText = ($("#check3").prop("checked") ? true : false);
+                    if (!explicitConsentText) {
+                        $('.registrer-sign-up-message').html('Açık Rıza Metnini kabul etmeniz gerekmektedir.');
+                        return false;
+                    }
+                }
+            }
+            var redirectUrl = "/account/signin?type=Google";
+            location.href = redirectUrl + "&ReturnUrl=" + location.pathname;
+        })
+        $(document).on('click', '.LogOutBtn', function () {
+            location.href = "/account/signout";
+        })
+        $(document).on('click', '#btn_login', function () {
+            var loginBtn = $(this);
+            var token = $('input[name="__RequestVerificationToken"]').val();
+            loginBtn.addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').prop('disabled', true);
+            var obj = {
+                EmailAddress: $("#emailLogin").val(),
+                Password: $("#pwdLogin").val(),
+                RedirectURL: getParameterByName("redirecturl"),
+            };
+            if (obj.EmailAddress == "" || obj.Password == "") {
+                $('.sign-up-message').html("Kullanıcı adı veya parola boş geçilemez.");
+                 loginBtn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').prop('disabled', false);
+                return false;
+            }
+
+            $.ajax({
+                url: "/Account/LoginV2",
+                type: "POST",
+                headers: {
+                    //"__RequestVerificationToken": token,
+                    "cfturnstiletoken": cfLoginToken,
+                },
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                success: function (data) {
+
+                    if (data != null) {
+                        if (data.Status == 200) {
+                            localStorage.removeItem('hideOnboarding');
+                            location.href = data.RedirectUrl;
+                        }
+                        else {
+                            _turnstileloginCb();
+                            $('.sign-up-message').html(data.Message);
+                        }
+                    }
+                    else {
+                        _turnstileloginCb();
+                        $('.sign-up-message').html(data.Message);
+                    }
+
+                    setTimeout(function () {
+                        loginBtn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').prop('disabled', false);
+                    }, 500)
+
+                },
+                error: function (response) {
+                    _turnstileloginCb();
+                    console.log(response.responseText + " - " + response.status);
+                    setTimeout(function () {
+                        loginBtn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').prop('disabled', false);
+                    },500)
+
+                },
+            });
+        })
+        $(document).on('keypress', '#pwdLogin,#emailLogin', function (e) {
+            var key = e.which;
+
+            if (key == 13)  // the enter key code
+            {
+                $("#btn_login").trigger("click");
+            }
+        })
+        $(document).on('click', '#btn_password', function () {
+            var obj = {
+                EmailAddress: $("#resetEmail").val()
+            };
+            if (obj.EmailAddress == "") {
+                //ShowModal("Email alanı boş geçilemez");
+                $('.sign-up-message').html('Email alanı boş geçilemez.');
+                return false;
+            }
+            if (!validateEmail(obj.EmailAddress)) {
+                $('.sign-up-message').html('Girilen Email Adresi uygun değil.');
+                return false;
+            }
+            $.ajax({
+                url: "/Account/EmailValidationV2",
+                type: "POST",
+                headers: {
+                     "cfturnstiletoken": cfForgotPassToken,
+                },
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data);
+                    if (data != null) {
+                        if (data.Status == 200) {
+                            $('.sign-up-message').html('');
+                            document.getElementById("OKMessage").style.display = "inline";
+                        }
+                        else {
+                            _turnstileforgotpassCb();
+                            $('.sign-up-message').html(data.Message);
+                        }
+                    }
+                    else {
+                        _turnstileforgotpassCb();
+                        $('.sign-up-message').html(data.Message);
+                    }
+                },
+                error: function (response) {
+                    _turnstileforgotpassCb();
+                    console.log(response.responseText + " - " + response.status);
+                },
+            });
+        });
+        $(document).on("click", ".btn-readmore", function () {
+
+            var datatarget = $(this).data("target");
+            var target = $("#" + datatarget);
+
+
+            target.toggleClass("active");
+
+            if (target.hasClass("active")) {
+                $(this).html('Daha az <i class="fas fa-chevron-up fa-xs p-left-10"></i>');
+            }
+            else {
+                $(this).html('Daha fazla <i class="fas fa-chevron-down fa-xs p-left-10"></i>');
+            }
+        })
+        $(document).on('click', '.add-favorite', function (e) {
+            var $target = $(this);
+                
+        var companyID = $(this).data('id');
+        $.ajax({
+            type: "POST",
+            url: '/FavoriteCompany/AddFavoriteCompany',
+            traditional: true,
+            data: { companyID: companyID },
+            success: function (data) {
+                if (data != null) {
+                    if (data.Status == 200) {
+                            $target.find('i').toggleClass('far').toggleClass('fas');
+                    }
+                    else {
+                        console.log(data);
+                    }
+                }
+                else {
+                    console.log("Hata!");
+                }
+            }
+        })
+    
+        })
+        var isShowLoginModal = false;
+        var isShowRegisterModal = false;
+        var isShowForgotPasswordModal = false;
+
+            $(window).on('hashchange', function () {
+                locationHashChanged();
+
+    });
+        function locationHashChanged() {
+            if (location.hash != '') {
+                if (location.hash.toLowerCase() == '#loginmodal' && $("#cauth").val() == 'False') {
+                            isShowLoginModal = true;
+                            $("#loginModal").modal('show');
+                    }
+                else if (location.hash.toLowerCase() == '#registration' && $("#cauth").val() == 'False') {
+                            isShowRegisterModal = true;
+                            $.get("/layout/singin", function (data) {
+                                $("#registrationModalBody").empty().append(data);
+                                $('#registration').modal('show');
+                            });
+                }
+                else if (location.hash.toLowerCase() == '#forgotpassword' && $("#cauth").val() == 'False') {
+                    isShowForgotPasswordModal = true;
+                   $.get("/layout/forgotpassword", function (data) {
+                        $("#forgotPasswordModalBody").empty().append(data);
+                        $('#resetEmail').val("");
+                        $('#forgotPassword').modal('show');
+            });
+                    }
+                }
+
+        }
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+    }
+        function ShowOnBoarding() {
+            $('.modal').modal('hide');
+        $.get("/layout/onboarding", function (data) {
+            //console.log(data)
+            $("#OnBoardingModalBody").empty().append(data);
+
+            $('#OnBoarding').modal('show');
+
+        });
+    }
+    </script>
+    <script type="text/javascript">
+        _linkedin_partner_id = "113308";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=113308&fmt=gif" />
+    </noscript>
+</body>
+</html>
