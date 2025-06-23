@@ -17,8 +17,10 @@ This project scrapes job listings from:
 2. Run the main script:
    ```bash
    python main.py
-   #or
-   python main.py excel 
+   ```
+   or if you want .xlsx output you can use:
+   ```bash
+   python main.py excel
    ```
 3. Output will be saved as `jobs.csv` if you haven't have excel argument, if you have excel argument output will be saved as `jobs.xlsx`
 
