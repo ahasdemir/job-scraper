@@ -22,7 +22,7 @@ This project scrapes job listings from:
    ```bash
    python main.py excel
    ```
-3. Output will be saved as `jobs.csv` if you haven't have excel argument, if you have excel argument output will be saved as `jobs.xlsx`
+3. Output will be saved as `jobs.csv` if you don't specify the 'excel' argument, or as `jobs.xlsx` if you do.
 
 ## Adding New Scrapers
 - Add a new Python file in the `scrapers/` directory.
