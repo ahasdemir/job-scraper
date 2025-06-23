@@ -1,6 +1,7 @@
 import pandas as pd
 from scrapers.youthall import scrape_jobs as scrape_youthall
 from scrapers.toptalent import scrape_jobs as scrape_toptalent
+import sys
 
 def main():
     jobs = []
@@ -16,5 +17,13 @@ def main():
     df.to_csv('jobs.csv', index=False, columns=['title', 'company', 'location', 'link', 'source'])
     print('Saved to jobs.csv')
 
+def export_excel():
+    df = pd.read_csv('jobs.csv')
+    df.to_excel('jobs.xlsx', index=False)
+    print('Saved to jobs.xlsx')
+
 if __name__ == '__main__':
-    main() 
+    if len(sys.argv) > 1 and sys.argv[1] == 'excel':
+        export_excel()
+    else:
+        main() 
